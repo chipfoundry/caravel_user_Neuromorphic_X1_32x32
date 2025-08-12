@@ -1,0 +1,5 @@
+from hello_world.hello_world import hello_world
+from hello_world_uart.hello_world_uart import hello_world_uart
+from user_proj_tests.ram1k_smoke_test.ram1k_smoke_test import ram1k_smoke_test
+from user_proj_tests.ram_word.ram_word import ram_word
+from gpio_test.gpio_test import gpio_test
