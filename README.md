@@ -1,44 +1,41 @@
-# Caravel User Neuromorphic_X1_32x32 Example
+# Caravel User Neuromorphic X1 Example
 
-This project demonstrates the straightforward integration of a commercial **Neuromorphic X1 (32×32 1T1R)** analog in‑memory compute macro within the `user_project_wrapper` using the IPM (IP Manager) tool.
-
-**Repository:** https://github.com/BMsemi/caravel_user_Neuromorphic_X1_32x32
+This project demonstrates the straightforward integration of a commercial Neuromorphic X1 within the `user_project_wrapper` using the IPM (IP Manager) tool.
 
 ## Get Started Quickly
 
-Follow these steps to set up your environment and harden the Neuromorphic_X1_32x32 macro.
+### Follow these steps to set up your environment and harden the Neuromorphic X1:
 
-### Clone the Repository
-```bash
-git clone https://github.com/BMsemi/caravel_user_Neuromorphic_X1_32x32.git
+1. **Clone the Repository:**
+
 ```
+git clone https://github.com/efabless/caravel_user_neuromorphic_x1.git
+```
+2. **Prepare Your Environment:**
 
-### Prepare Your Environment
-```bash
-cd caravel_user_Neuromorphic_X1_32x32
+```
+cd caravel_user_neuromorphic_x1
 make setup
 ```
+3. **Install IPM:**
 
-### Install IPM
-```bash
+```
 pip install cf-ipm
 ```
+4. **Install the Neuromorphic X1 IP:**
 
-### Install the Neuromorphic_X1_32x32 IP
-```bash
-# add --include-drafts if the IP is not yet public
-ipm install Neuromorphic_X1_32x32 --include-drafts
 ```
-
-### Harden the Neuromorphic_X1_32x32 Macro
-```bash
-# adjust target name if your Makefile uses a different wrapper name
-make Neuromorphic_X1_32x32_wb_wrapper
+ipm install CF_Neuromorphic_X1_1024x32
 ```
+5. **Harden the Neuromorphic X1 Macro:**
 
-### Harden the User Project Wrapper
-```bash
+```
+make CF_Neuromorphic_X1_1024x32_wb_wrapper
+```
+6. **Harden the User Project Wrapper:**
+
+```
 make user_project_wrapper
 ```
 
-For further information on usage, consult your project documentation or IPM package docs.
+For further information on usage, consult the dedicated [knowledgebase article](https://chipfoundry.io/knowledge-base/commercial-neuromorphic-x1). Details about the Neuromorphic X1 IP itself are available in the [Neuromorphic X1 documentation](https://chipfoundry.io/commercial-neuromorphic-x1).

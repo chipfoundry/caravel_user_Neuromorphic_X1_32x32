@@ -1,11 +1,11 @@
 {
-    "DESIGN_NAME": "CF_SRAM_1024x32_wb_wrapper",
+    "DESIGN_NAME": "ReRAM_Wishbone_Interface",
     "FP_PDN_MULTILAYER": true,
     "FP_PDN_CORE_RING": false,
     "VERILOG_FILES": [
-        "dir::../../ip/CF_SRAM_1024x32/hdl/CF_SRAM_1024x32.v",
-        "dir::../../ip/CF_SRAM_1024x32/hdl/controllers/ram_controller_wb.v",
-        "dir::../../ip/CF_SRAM_1024x32/hdl/bus_wrapper/CF_SRAM_1024x32_wb_wrapper.v"
+        "dir::../../ip/Neuromorphic_X1_32x32/hdl/NEUROMORPHIC_X1.v",
+        "dir::../../ip/Neuromorphic_X1_32x32/hdl/controller/wishbone_slave_interface.v",
+        "dir::../../ip/Neuromorphic_X1_32x32/hdl/bus_wrapper/ReRAM_Wishbone_Interface.v"
     ],
     "SYNTH_DEFINES": ["PnR"],
     "ERROR_ON_LINTER_ERRORS": false,
@@ -24,16 +24,16 @@
         "VGND"
     ],
     "VERILOG_FILES_BLACKBOX": [
-        "dir::../../ip/CF_SRAM_1024x32/hdl/CF_SRAM_1024x32_stub.v"
+        "dir::../../ip/Neuromorphic_X1_32x32/hdl/NEUROMORPHIC_X1_stub.v"
     ],
     "EXTRA_GDS_FILES": [
-        "dir::../../ip/CF_SRAM_1024x32/gds/CF_SRAM_1024x32.gds"
+        "dir::../../ip/Neuromorphic_X1_32x32/gds/BM130_NEURO_32X32.gds"
     ],
     "EXTRA_LEFS": [
-        "dir::../../ip/CF_SRAM_1024x32/lef/CF_SRAM_1024x32.lef"
+        "dir::../../ip/Neuromorphic_X1_32x32/lef/BM130_NEURO_32X32.lef"
     ],
     "EXTRA_LIBS": [
-        "dir::../../ip/CF_SRAM_1024x32/lib/CF_SRAM_1024x32_tt_180V_25C.lib"
+        "dir::../../ip/Neuromorphic_X1_32x32/lib/ETM_AV_TC_RCTYPICAL.lib"
     ],
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
     "FP_PDN_HORIZONTAL_LAYER": "met3",
@@ -45,13 +45,14 @@
     "FP_PDN_HWIDTH": 1.76,
     "FP_PDN_VSPACING": 10,
     "FP_PDN_HSPACING": 10,
-    "FP_PDN_VPITCH": 50,
-    "FP_PDN_HPITCH": 50,
+    "FP_PDN_VPITCH": 60,
+    "FP_PDN_HPITCH": 60,
+    "VDD_NETS": ["VDDA", "VDDC"],
+    "GND_NETS": ["VSS", "VSS"],
+
     "FP_PDN_MACRO_HOOKS": [
-        "i_sram VPWR VGND vpwra vgnd",
-        "i_sram VPWR VGND vpb vnb",
-        "i_sram VPWR VGND vpwrp vgnd",
-        "i_sram VPWR VGND vpwrm vgnd"
+      "functional\\.NEUROMORPHIC_X1_inst VDDA VSS VDDA VSS",
+      "functional\\.NEUROMORPHIC_X1_inst VDDC VSS VDDC VSS"
     ],
     "FP_PDN_CFG": "dir::pdn.tcl",
     "QUIT_ON_LINTER_ERRORS": false,
@@ -71,5 +72,7 @@
     "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
     "QUIT_ON_MAGIC_DRC": false,
     "MAGIC_EXT_USE_GDS": false,
-    "QUIT_ON_ILLEGAL_OVERLAPS": false
+    "QUIT_ON_ILLEGAL_OVERLAPS": false,
+    "FP_IO_UNMATCHED_ERROR": 0,
+    "QUIT_ON_MISMATCHED_PINS": 0
 }
