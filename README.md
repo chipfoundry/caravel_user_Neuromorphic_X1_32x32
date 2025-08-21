@@ -9,12 +9,12 @@ This project demonstrates the straightforward integration of a commercial Neurom
 1. **Clone the Repository:**
 
 ```
-git clone https://github.com/efabless/caravel_user_neuromorphic_x1.git
+git clone https://github.com/BMsemi/caravel_user_Neuromorphic_X1_32x32.git
 ```
 2. **Prepare Your Environment:**
 
 ```
-cd caravel_user_neuromorphic_x1
+cd caravel_user_Neuromorphic_X1_32x32
 make setup
 ```
 3. **Install IPM:**
