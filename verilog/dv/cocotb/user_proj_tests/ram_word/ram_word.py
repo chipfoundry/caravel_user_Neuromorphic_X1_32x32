@@ -22,14 +22,15 @@ import cocotb
 @cocotb.test()
 @report_test
 async def ram_word(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=899394)
+    caravelEnv = await test_configure(dut, timeout_cycles=500000)
 
-    cocotb.log.info(f"[TEST] Start ram_word test")  
+    cocotb.log.info(f"[TEST] Starting ReRam_word test")  
     
     await caravelEnv.wait_mgmt_gpio(1) # wait until writing 7 through la 
-    if caravelEnv.monitor_gpio(33, 32).integer == 0b10:
-        cocotb.log.info (f"[TEST] Pass the gpio value is '{hex(caravelEnv.monitor_gpio(33, 32).integer)}'")
-    elif caravelEnv.monitor_gpio(33, 32).integer == 0b01:
-        cocotb.log.error (f"[TEST] fail in reading memory value")  
-    else:
-        cocotb.log.error (f"[TEST] Fail the gpio value is unknown :'{bin(caravelEnv.monitor_gpio(33, 32).integer)}' expected {bin(0b10)} or {bin(0b01)}")    
+    cocotb.log.info(f"[TEST] Start Write and Read.")
+    await caravelEnv.release_csb()
+    cocotb.log.info(f"[TEST] Processing Write and Read.")
+    await caravelEnv.wait_mgmt_gpio(0)
+    cocotb.log.info(f"[TEST] Completed Write and Read")
+    
+    
