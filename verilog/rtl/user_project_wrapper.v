@@ -81,28 +81,26 @@ module user_project_wrapper #(
 /*--------------------------------------*/
 /* User project is instantiated  here   */
 /*--------------------------------------*/
+ ReRAM_Wishbone_Interface mprj(
 
-CF_SRAM_1024x32_wb_wrapper mprj (
-`ifdef USE_POWER_PINS
-	.VPWR(vccd1),	// User area 1 1.8V power
-	.VGND(vssd1),	// User area 1 digital ground
-`endif
-
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
-
-    // MGMT SoC Wishbone Slave
-
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .wbs_sel_i(wbs_sel_i),
-    .wbs_adr_i(wbs_adr_i),
-    .wbs_dat_i(wbs_dat_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o)
+  // user clock and reset
+           .user_clk(wb_clk_i)           , 
+           .user_rst(wb_rst_i)           ,
+           .wb_rst_i(wb_rst_i)           ,
+            .wb_clk_i(wb_clk_i)           ,
+           .wbs_adr_i(wbs_adr_i)           , // Wishbone write address
+           .wbs_dat_i(wbs_dat_i)               , // Wishbone Read data 
+            .wbs_ack_o(wbs_ack_o)           , // Wishbone acknowledgment
+                .wbs_cyc_i(wbs_cyc_i)           , // Wishbone mode selection
+                .wbs_stb_i(wbs_stb_i)           , // Wishbone mode selection
+                .wbs_we_i(wbs_we_i)            , // Wishbone enable i_wb_we = 1
+        .wbs_sel_i(wbs_sel_i)                 , //
+      .wbs_dat_o(wbs_dat_o)                // Wishbone Write data
+  
 );
+
 
 endmodule	// user_project_wrapper
 
 `default_nettype wire
+
