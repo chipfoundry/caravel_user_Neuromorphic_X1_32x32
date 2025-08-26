@@ -81,7 +81,7 @@ module user_project_wrapper #(
 /*--------------------------------------*/
 /* User project is instantiated  here   */
 /*--------------------------------------*/
- ReRAM_Wishbone_Interface mprj(
+ Neuromorphic_X1_wb mprj(
 
   // user clock and reset
            .user_clk(wb_clk_i)           , 

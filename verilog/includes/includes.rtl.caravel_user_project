@@ -15,9 +15,6 @@
 
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
--v $(USER_PROJECT_VERILOG)/../ip/Neuromorphic_X1_32x32/hdl/NEUROMORPHIC_X1.v
--v $(USER_PROJECT_VERILOG)/../ip/Neuromorphic_X1_32x32/hdl/controller/wishbone_slave_interface.v
--v $(USER_PROJECT_VERILOG)/../ip/Neuromorphic_X1_32x32/hdl/bus_wrapper/ReRAM_Wishbone_Interface.v
--v $(USER_PROJECT_VERILOG)/../ip/Neuromorphic_X1_32x32/hdl/beh_model/NEUROMORPHIC_X1_macro.v
+-v $(USER_PROJECT_VERILOG)/../ip/Neuromorphic_X1_32x32/hdl/beh_model/Neuromorphic_X1_Beh.v
 
  

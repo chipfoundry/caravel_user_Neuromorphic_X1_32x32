@@ -1,11 +1,9 @@
 {
-    "DESIGN_NAME": "ReRAM_Wishbone_Interface",
+    "DESIGN_NAME": "Neuromorphic_X1_wb",
     "FP_PDN_MULTILAYER": true,
     "FP_PDN_CORE_RING": false,
     "VERILOG_FILES": [
-        "dir::../../ip/Neuromorphic_X1_32x32/hdl/NEUROMORPHIC_X1.v",
-        "dir::../../ip/Neuromorphic_X1_32x32/hdl/controller/wishbone_slave_interface.v",
-        "dir::../../ip/Neuromorphic_X1_32x32/hdl/bus_wrapper/ReRAM_Wishbone_Interface.v"
+        "dir::../../ip/Neuromorphic_X1_32x32/hdl/beh_model/Neuromorphic_X1_Beh.v"
     ],
     "SYNTH_DEFINES": ["PnR"],
     "ERROR_ON_LINTER_ERRORS": false,
@@ -51,8 +49,8 @@
     "GND_NETS": ["VSS", "VSS"],
 
     "FP_PDN_MACRO_HOOKS": [
-      "functional\\.NEUROMORPHIC_X1_inst VDDA VSS VDDA VSS",
-      "functional\\.NEUROMORPHIC_X1_inst VDDC VSS VDDC VSS"
+      "core_inst VDDA VSS VDDA VSS",
+      "core_inst VDDC VSS VDDC VSS"
     ],
     "FP_PDN_CFG": "dir::pdn.tcl",
     "QUIT_ON_LINTER_ERRORS": false,
