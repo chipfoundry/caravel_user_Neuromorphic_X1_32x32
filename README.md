@@ -25,7 +25,7 @@ pip install cf-ipm
 4. **Install the Neuromorphic X1 IP:**
 
 ```
-ipm install Neuromorphic_X1_32x32 --include-drafts
+ipm install Neuromorphic_X1_32x32
 ```
 5. **Harden the Neuromorphic X1 Macro:**
 
