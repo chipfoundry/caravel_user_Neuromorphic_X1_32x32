@@ -34,4 +34,4 @@ ipm install Neuromorphic_X1_32x32
 make user_project_wrapper
 ```
 
-For further information on usage, consult the dedicated [knowledgebase article](https://chipfoundry.io/knowledge-base/commercial-neuromorphic-x1). Details about the Neuromorphic X1 IP itself are available in the [Neuromorphic X1 documentation](https://chipfoundry.io/commercial-neuromorphic-x1).
+Details about the Neuromorphic X1 IP itself are available in the [Neuromorphic X1 documentation](https://github.com/BMsemi/Neuromorphic_X1_32x32).
