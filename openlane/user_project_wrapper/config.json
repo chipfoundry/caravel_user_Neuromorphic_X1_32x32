@@ -8,7 +8,7 @@
     "MAGIC_EXT_USE_GDS": true,
     
     "EXTRA_VERILOG_MODELS": [
-    "dir::../../stub/Neuromorphic_X1_stub.v"
+    "dir::../../ip/Neuromorphic_X1_32x32/hdl/Neuromorphic_X1_stub.v"
   ],
   
     "PNR_SDC_FILE": "dir::signoff.sdc",
