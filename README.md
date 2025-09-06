@@ -27,12 +27,8 @@ pip install cf-ipm
 ```
 ipm install Neuromorphic_X1_32x32
 ```
-5. **Harden the Neuromorphic X1 Macro:**
 
-```
-make CF_Neuromorphic_X1_32x32_wb_wrapper
-```
-6. **Harden the User Project Wrapper:**
+5. **Harden the User Project Wrapper:**
 
 ```
 make user_project_wrapper
