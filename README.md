@@ -34,4 +34,11 @@ ipm install Neuromorphic_X1_32x32
 make user_project_wrapper
 ```
 
+6. **Harden multiple instances of IP **
+
+```
+Replace /verilog/rtl/user_project_wrapper.v with user_project_wrapper_multi_inst.v
+Replace /openlane/user_project_wrapper/config.json with config_multi_inst.json
+```
+
 Details about the Neuromorphic X1 IP itself are available in the [Neuromorphic X1 documentation](https://github.com/BMsemi/Neuromorphic_X1_32x32).
