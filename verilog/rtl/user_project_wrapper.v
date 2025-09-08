@@ -69,10 +69,10 @@ module user_project_wrapper #(
   .wbs_ack_o (wbs_ack_o),
 
   // Scan/Test
-  .ScanInCC  (io_in[0]),
+  .ScanInCC  (io_in[4]),
   .ScanInDL  (io_in[1]),
   .ScanInDR  (io_in[2]),
-  .TM        (io_in[3]),
+  .TM        (io_in[5]),
   .ScanOutCC (io_out[0]),
 
   // Analog / bias pins (drive from analog_io[] wires you already built)
@@ -80,7 +80,7 @@ module user_project_wrapper #(
   .Vcc_read      (analog_io[1]),
   .Vcomp         (analog_io[2]),
   .Bias_comp2    (analog_io[3]),
-  .Vcc_wl_read   (analog_io[4]),
+  .Vcc_wl_read   (analog_io[12]),
   .Vcc_wl_set    (analog_io[5]),
   .Vbias         (analog_io[6]),
   .Vcc_wl_reset  (analog_io[7]),
